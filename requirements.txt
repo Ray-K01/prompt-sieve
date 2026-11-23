@@ -1,0 +1,6 @@
+python-dotenv
+pydantic
+scikit-learn
+datasets
+pytest
+google-genai
