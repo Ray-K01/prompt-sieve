@@ -1,15 +1,24 @@
-# llm-guard-lite
+# prompt-sieve
 
-A lightweight defensive guardrail for LLM applications: detects prompt injection
-(rules + LLM classifier) and scans model output for leaked secrets/PII.
+A lightweight defensive filter for LLM applications: detects prompt injection
+(rules now, LLM classifier planned) and will scan model output for leaked secrets.
 
 > Work in progress. Authorized, defensive use only.
 
-## Setup
+## Setup (Windows PowerShell)
+```powershell
+py -m venv venv
+venv\Scripts\Activate.ps1
+python -m pip install pytest
+python -m guard.rules
+python -m pytest
+```
+
+## Setup (Linux / macOS)
 ```bash
-python -m venv venv && source venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env   # then add your key
-python test_llm_call.py
-pytest
+python3 -m venv venv
+source venv/bin/activate
+python -m pip install pytest
+python -m guard.rules
+python -m pytest
 ```
