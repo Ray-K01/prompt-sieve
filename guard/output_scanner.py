@@ -1,6 +1,7 @@
 import re
 
 EMAIL = re.compile(r"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}", re.IGNORECASE)
+API_KEY = re.compile(r"sk-[A-Za-z0-9]{20,}")
 
 
 def scan_output(text: str) -> list:
@@ -8,4 +9,6 @@ def scan_output(text: str) -> list:
     findings = []
     if EMAIL.search(text):
         findings.append("email")
+    if API_KEY.search(text):
+        findings.append("api_key")
     return findings
