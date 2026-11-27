@@ -1,7 +1,7 @@
 import re
 
 EMAIL = re.compile(r"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}", re.IGNORECASE)
-API_KEY = re.compile(r"sk-[A-Za-z0-9]{20,}")
+API_KEY = re.compile(r"\bsk-[A-Za-z0-9]{20,}")
 
 
 def scan_output(text: str) -> list:

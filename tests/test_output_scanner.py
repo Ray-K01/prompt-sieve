@@ -16,3 +16,8 @@ def test_api_key_detected():
 
 def test_normal_sentence_not_flagged_as_key():
     assert "api_key" not in scan_output("I like skiing")
+
+
+def test_word_ending_in_sk_not_flagged_as_key():
+    assert "api_key" not in scan_output(
+        "Run the disk-partitionmanagementutility tool")
